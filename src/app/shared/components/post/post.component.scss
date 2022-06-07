@@ -1,0 +1,15 @@
+.card {
+    width: 700px;
+    margin: 20px auto;
+    .card-body {
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .text-muted {
+            margin-right: 10px;
+        }
+    }
+}
