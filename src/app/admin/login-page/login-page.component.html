@@ -1,1 +1,21 @@
-<p>login-page works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+  <h3>Log in to the admin panel</h3>  
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+    {{error}}
+  </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" formControlName="email" [ngClass]="{'is-invalid': loginForm.controls['email'].invalid && loginForm.controls['email'].touched}">
+      <div class="invalid-feedback">
+        Type correct email
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" formControlName="password" [ngClass]="{'is-invalid': loginForm.controls['password'].invalid && loginForm.controls['password'].touched}">
+      <div class="invalid-feedback">
+        Password must be at least 8 characters long
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid || submitted">Submit</button>
+  </form>
