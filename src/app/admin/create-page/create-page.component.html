@@ -1,20 +1,23 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="mb-3">
-        <label for="title" class="form-label">Post title</label>
+        <label for="title" class="form-label">
+            <h3>Post title</h3>
+        </label>
         <input type="text" class="form-control" id="title" formControlName="title"
             [ngClass]="{'is-invalid': form.controls['title'].invalid && form.controls['title'].touched}">
         <div class="invalid-feedback">
-            <quill-editor formControlName="content"></quill-editor>
+            Enter post title
         </div>
     </div>
-    <div class="form-control">
-        <label for="content">Post content</label>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias ab doloremque, asperiores aut ratione dolorum,
-        ullam qui sit delectus possimus enim! Corrupti perferendis sed quidem voluptates non molestias consectetur
-        voluptate.
-    </div>
+    <label for="content">
+        <h3>Post content</h3>
+    </label>
+    <quill-editor formControlName="content"></quill-editor>
+    <br>
     <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
+        <label for="author" class="form-label">
+            <h3>Author</h3>
+        </label>
         <input type="text" class="form-control" id="author" formControlName="author"
             [ngClass]="{'is-invalid': form.controls['author'].invalid && form.controls['author'].touched}">
         <div class="invalid-feedback">
