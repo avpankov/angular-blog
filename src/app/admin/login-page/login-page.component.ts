@@ -26,6 +26,8 @@ ngOnInit(): void {
   this.route.queryParams.subscribe((params: Params) => {
     if (params['loginAgain']) {
       this.message = 'Please log in again'
+    } else if (params['authFailed']) {
+      this.message = 'Session expired. Log in again'
     }
   })
   this.loginForm = new FormGroup({
